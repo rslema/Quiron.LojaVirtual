@@ -22,12 +22,12 @@ namespace Quiron.LojaVirtual.Web.Controllers
         {
             _repositorio = new ProdutosRepositorio();
             Produto produto = _repositorio.Produtos.
-                FirstOrDefault(p => p.ProdutoId == produtoId);
+                FirstOrDefault(p=>p.ProdutoId == produtoId);
             if (produto != null)
             {
                 ObterCarrinho().AdicionarItem(produto, 1);
             }
-            return RedirectToAction("Index", new { returnUrl });
+            return RedirectToAction("Index", new{returnUrl});
 
         }
         private Carrinho ObterCarrinho()
@@ -58,7 +58,7 @@ namespace Quiron.LojaVirtual.Web.Controllers
             return RedirectToAction("Index", new { returnUrl });
         }
 
-        public ViewResult Index(Carrinho carrinho, string returnurl)
+        public ViewResult Index(string returnurl)
         {
             return View(new CarrinhoViewModel
             {

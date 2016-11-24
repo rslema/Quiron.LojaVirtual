@@ -31,8 +31,8 @@ namespace Quiron.LojaVirtual.Web.Controllers
                 {
                     PaginaAtual = pagina,
                     ItensPorPagina = ProdutosPorPagina,
-                    ItensTotal = categoria == null ? _repositorio.Produtos.Count() : _repositorio.Produtos.Count(e => e.Categoria == categoria)
-             //       ItensTotal =  _repositorio.Produtos.Count()
+             //       ItensTotal = categoria == null ? _repositorio.Produtos.Count() : _repositorio.Produtos.Count(e => e.Categoria == categoria)
+                    ItensTotal =  _repositorio.Produtos.Count()
                 },
                 CategoriaAtual=categoria 
             };

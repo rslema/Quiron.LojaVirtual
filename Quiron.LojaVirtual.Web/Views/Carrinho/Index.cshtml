@@ -26,12 +26,12 @@ ViewBag.Title="Real Sports: Seu Carrinho";
         @foreach (var item in Model.Carrinho.ItensCarrinho)
         {
             <tr>
-                <td class="text-center">@item.Quantidade </td>
+                <td class="text-center">@item.Quantidade</td>
                 <td class="text-center">@item.Produto.Nome</td>
                 <td class="text-center">@item.Produto.Preco.ToString("c")</td>
-                <td class="text-center">@((item.Quantidade * item.Produto.Preco).ToString("c"))</td>
+                <td class="text-center">@((item.Quantidade*item.Produto.Preco).ToString("c"))</td>
             <td>
-                @using (Html.BeginForm("Remover", "Carrinho"))
+                @using (Html.BeginForm("Remover","Carrinho"))
                 {
                     @Html.Hidden("ProdutoId",item.Produto.ProdutoId)
                     @Html.HiddenFor(x=> x.ReturnUrl)
@@ -52,5 +52,5 @@ ViewBag.Title="Real Sports: Seu Carrinho";
     <a class="btn btn-primary" href="@Model.ReturnUrl">
         Continuar comprando
     </a>
-    @Html.ActionLink("Fechar o pedido", "FecharPedido", "Carrinho", new { @class = "btn btn-primary" })
+    @Html.ActionLink("Fechar o pedido","FecharPedido","Carrinho",new{@class="btn btn-primary"})
 </div>
