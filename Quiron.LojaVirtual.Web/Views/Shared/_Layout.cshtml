@@ -11,16 +11,17 @@
 <body>
     <div class="navbar navbar-inverse" role="navigation">
         <a class="navbar-brand" href="#"> REAL SPORTS - Seu esporte é aqui</a>
+        @Html.Action("Resumo","Carrinho")
     </div>
     <div class="row panel">
-        <div id="categorias" class="col-xs-3">
+        <div id="categorias" class="col-xs-2">
             @Html.Action("Menu","Categoria")
 
 
 
 
         </div>
-        <div id="cayegorias" class="col-xs-8">
+        <div id="cayegorias" class="col-xs-9">
             @RenderBody()
         </div>
     </div>

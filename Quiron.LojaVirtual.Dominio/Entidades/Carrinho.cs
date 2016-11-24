@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Quiron.LojaVirtual.Dominio.Entidades
 {
@@ -27,7 +24,7 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
             }
             else
             {
-                item.Quantidade = quantidade;
+                item.Quantidade += quantidade;
             }
 
 
@@ -73,6 +70,4 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
 
         public int Quantidade { get; set; }
     }
-
-
 }
