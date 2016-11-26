@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Quiron.LojaVirtual.Dominio.Repositorio;
 using Quiron.LojaVirtual.Web.Models;
+using Quiron.LojaVirtual.Dominio.Entidades;
 
 namespace Quiron.LojaVirtual.Web.Controllers
 {
@@ -31,8 +32,8 @@ namespace Quiron.LojaVirtual.Web.Controllers
                 {
                     PaginaAtual = pagina,
                     ItensPorPagina = ProdutosPorPagina,
-             //       ItensTotal = categoria == null ? _repositorio.Produtos.Count() : _repositorio.Produtos.Count(e => e.Categoria == categoria)
-                    ItensTotal =  _repositorio.Produtos.Count()
+                  ItensTotal = categoria == null ? _repositorio.Produtos.Count() : _repositorio.Produtos.Count(e => e.Categoria == categoria)
+                //      ItensTotal =  _repositorio.Produtos.Count()
                 },
                 CategoriaAtual=categoria 
             };
@@ -40,5 +41,26 @@ namespace Quiron.LojaVirtual.Web.Controllers
 
             return View(model);
         }
+
+
+        public FileContentResult ObterImagem(int produtoId)
+        {
+            _repositorio = new ProdutosRepositorio();
+            Produto prod = _repositorio.Produtos
+                .FirstOrDefault(p => p.ProdutoId == produtoId);
+
+            if (prod != null)
+            {
+                return File(prod.Imagem, prod.ImagemMimeType);
+            }
+
+
+            return null;
+        }
+
+
+
+
+
     }
 }

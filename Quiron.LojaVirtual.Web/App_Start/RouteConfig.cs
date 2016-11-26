@@ -36,6 +36,10 @@ namespace Quiron.LojaVirtual.Web
                 "{categoria}/Pagina{pagina}", new { controller = "Vitrine", action = "ListaProdutos" }, new { pagina = @"\d+" });
 
 
+            routes.MapRoute("ObterImagem", "Vitrine/ObterImagem/{produtoId}", new { controller = "Vitrine", action = "ObterImagem", produtoId = UrlParameter.Optional });
+
+
+
             //routes.MapRoute(
             //    "ObterImagem",
             //    "Vitrine/ObterImagem/{produtoId}",
