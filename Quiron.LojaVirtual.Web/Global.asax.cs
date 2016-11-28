@@ -6,7 +6,8 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Quiron.LojaVirtual.Dominio.Entidades;
 using Quiron.LojaVirtual.Web.Infraestrutura;
-
+using System.Web.Optimization;
+using Quiron.LojaVirtual.Web.App_Start;
 
 namespace Quiron.LojaVirtual.Web
 {
@@ -16,6 +17,7 @@ namespace Quiron.LojaVirtual.Web
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             ModelBinders.Binders.Add(typeof(Carrinho), new CarrinhoModelBinder());
         }
