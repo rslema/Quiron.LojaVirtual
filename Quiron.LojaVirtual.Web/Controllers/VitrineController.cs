@@ -12,35 +12,46 @@ namespace Quiron.LojaVirtual.Web.Controllers
     public class VitrineController : Controller
     {
         private ProdutosRepositorio _repositorio;
-        public int ProdutosPorPagina = 3;
+        public int ProdutosPorPagina = 12;
         // GET: Vitrine
-        public ViewResult ListaProdutos(string categoria,int pagina=1)
+        //public ViewResult ListaProdutos(string categoria,int pagina=1)
+        //{
+        //    _repositorio = new ProdutosRepositorio();
+
+
+        //    ProdutosViewModel model = new ProdutosViewModel
+        //    {
+        //        Produtos = _repositorio.Produtos
+        //        .Where(p=> categoria ==null || p.Categoria ==categoria )
+        //        .OrderBy(p => p.Descricao)
+        //        .Skip((pagina - 1) * ProdutosPorPagina)
+        //        .Take(ProdutosPorPagina),
+
+
+        //        Paginacao = new Paginacao
+        //        {
+        //            PaginaAtual = pagina,
+        //            ItensPorPagina = ProdutosPorPagina,
+        //          ItensTotal = categoria == null ? _repositorio.Produtos.Count() : _repositorio.Produtos.Count(e => e.Categoria == categoria)
+        //        //      ItensTotal =  _repositorio.Produtos.Count()
+        //        },
+        //        CategoriaAtual=categoria 
+        //    };
+
+
+        //    return View(model);
+        //}
+
+
+        [Route("DetalhesProduto/{id}/{produto}")]
+        public ViewResult Detalhes(int id)
         {
             _repositorio = new ProdutosRepositorio();
-
-
-            ProdutosViewModel model = new ProdutosViewModel
-            {
-                Produtos = _repositorio.Produtos
-                .Where(p=> categoria ==null || p.Categoria ==categoria )
-                .OrderBy(p => p.Descricao)
-                .Skip((pagina - 1) * ProdutosPorPagina)
-                .Take(ProdutosPorPagina),
-
-
-                Paginacao = new Paginacao
-                {
-                    PaginaAtual = pagina,
-                    ItensPorPagina = ProdutosPorPagina,
-                  ItensTotal = categoria == null ? _repositorio.Produtos.Count() : _repositorio.Produtos.Count(e => e.Categoria == categoria)
-                //      ItensTotal =  _repositorio.Produtos.Count()
-                },
-                CategoriaAtual=categoria 
-            };
-          
-
-            return View(model);
+            Produto produto = _repositorio.ObterProduto(id);
+            return View(produto);
         }
+
+
 
 
 
@@ -62,6 +73,31 @@ namespace Quiron.LojaVirtual.Web.Controllers
         }
 
 
+
+
+        public ViewResult ListaProdutos(string categoria)
+        {
+            _repositorio = new ProdutosRepositorio();
+
+            var model = new ProdutosViewModel();
+
+            var rnd = new Random();
+
+            if (categoria != null)
+            {
+                model.Produtos = _repositorio.Produtos
+                    .Where(p => p.Categoria == categoria)
+                    .OrderBy(x => rnd.Next()).ToList();
+            }
+            else
+            {
+                model.Produtos = _repositorio.Produtos
+                    .OrderBy(x => rnd.Next())
+                    .Take(ProdutosPorPagina).ToList();
+            }
+
+            return View(model);
+        }
 
 
 
