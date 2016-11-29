@@ -33,5 +33,75 @@ namespace Quiron.LojaVirtual.Web.V2.Controllers
 
 
 
+        [OutputCache(Duration = 3600, Location = OutputCacheLocation.Server, VaryByParam = "none")]
+        public JsonResult ObterMarcas()
+        {
+            _repositorio = new MenuRepositorio();
+
+            var listaMarcas = _repositorio.ObterMarcas();
+
+            var marcas = from m in listaMarcas
+                         select new
+                         {
+                             m.MarcaDescricao,
+                             MarcaDescricaoSeo = m.MarcaDescricao.ToSeoUrl(),
+                             m.MarcaCodigo
+                         };
+
+            return Json(marcas, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+        [OutputCache(Duration = 3600, Location = OutputCacheLocation.Server, VaryByParam = "none")]
+        public JsonResult ObterClubesNacionais()
+        {
+            _repositorio = new MenuRepositorio();
+
+            var clubesRepositorio = _repositorio.ObterClubesNacionais();
+
+            var clubes = from c in clubesRepositorio
+                         select new
+                         {
+                             ClubeCodigo = c.LinhaCodigo,
+                             ClubeSeo = c.LinhaDescricao.ToSeoUrl(),
+                             Clube = c.LinhaDescricao
+                         };
+
+            return Json(clubes, JsonRequestBehavior.AllowGet);
+        }
+
+
+        [OutputCache(Duration = 3600, Location = OutputCacheLocation.Server, VaryByParam = "none")]
+        public JsonResult ObterClubesInternacionais()
+        {
+            _repositorio = new MenuRepositorio();
+
+            var clubesRepositorio = _repositorio.ObterClubesInternacionais();
+
+            var clubes = from c in clubesRepositorio
+                         select new
+                         {
+                             ClubeCodigo = c.LinhaCodigo,
+                             ClubeSeo = c.LinhaDescricao.ToSeoUrl(),
+                             Clube = c.LinhaDescricao
+                         };
+
+            return Json(clubes, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

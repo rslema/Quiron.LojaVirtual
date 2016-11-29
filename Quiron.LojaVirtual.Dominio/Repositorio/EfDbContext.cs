@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Quiron.LojaVirtual.Dominio.Entidades;
+using Quiron.LojaVirtual.Dominio.Entidades.Vitrine;
 
 namespace Quiron.LojaVirtual.Dominio.Repositorio
 {
@@ -16,6 +17,14 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
         public DbSet<Administrador> Administradores { get; set; }
 
         public DbSet<Categoria> Categorias { get; set; }
+
+        public DbSet<MarcaVitrine> MarcaVitrine { get; set; }
+
+        public DbSet<ClubesNacionais> ClubesNacionais { get; set; }
+
+        public DbSet<ClubesInternacionais> ClubesInternacionais { get; set; }
+
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

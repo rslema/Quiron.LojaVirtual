@@ -160,16 +160,19 @@
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\NavController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HtmlHelpers\StringHelpers.cs" />
+    <Compile Include="Models\ProdutosViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\sm-mint\sm-mint.css" />
     <Content Include="css\animate.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -241,6 +244,19 @@
     <Content Include="js\jquery.themepunch.revolution.min.js" />
     <Content Include="js\jquery.themepunch.tools.min.js" />
     <Content Include="js\respond.min.js" />
+    <Content Include="Marcas\adidas.jpg" />
+    <Content Include="Marcas\asics.jpg" />
+    <Content Include="Marcas\caloi.jpg" />
+    <Content Include="Marcas\fila.jpg" />
+    <Content Include="Marcas\mizuno.jpg" />
+    <Content Include="Marcas\nike.jpg" />
+    <Content Include="Marcas\oakley.jpg" />
+    <Content Include="Marcas\olympikus.jpg" />
+    <Content Include="Marcas\penalty.jpg" />
+    <Content Include="Marcas\puma.jpg" />
+    <Content Include="Marcas\reebok.jpg" />
+    <Content Include="Marcas\topper.jpg" />
+    <Content Include="Marcas\umbro.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -251,11 +267,16 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Content\sm-mint\mixins\_sub-items-indentation.scss" />
+    <Content Include="Content\sm-mint\sm-mint.scss" />
+    <Content Include="Content\sm-mint\_mixins.scss" />
+    <Content Include="Content\sm-mint\_sm-mint.scss" />
     <None Include="Properties\PublishProfiles\QuironLojaVirtualWebV220161128054226.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.smartmenus.bootstrap.js" />
     <Content Include="Scripts\jquery.smartmenus.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -281,11 +302,12 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\Shared\_Marcas.cshtml" />
+    <Content Include="Views\Nav\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\sm-simple\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Categoria\" />
     <Folder Include="Views\Menu\" />
     <Folder Include="Views\Produto\" />
