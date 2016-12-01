@@ -9,9 +9,10 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
 {
     public class ProdutosRepositorio
     {
-        public readonly EfDbContext _context = new EfDbContext();
 
-        public IEnumerable<Produto>Produtos
+        private readonly EfDbContext _context = new EfDbContext();
+
+        public IEnumerable<Produto> Produtos
         {
             get { return _context.Produtos; }
         }
@@ -21,7 +22,6 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
         {
             return _context.Produtos.Single(p => p.ProdutoId == id);
         }
-
 
 
 
@@ -49,9 +49,12 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
                     prod.Imagem = produto.Imagem;
                     prod.ImagemMimeType = produto.ImagemMimeType;
                 }
+
             }
+
             _context.SaveChanges();
         }
+
 
         //Excluir
 
@@ -63,11 +66,10 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
             if (prod != null)
             {
                 _context.Produtos.Remove(prod);
-                _context.SaveChanges();
+                // _context.SaveChanges();
             }
 
             return prod;
         }
-
     }
 }

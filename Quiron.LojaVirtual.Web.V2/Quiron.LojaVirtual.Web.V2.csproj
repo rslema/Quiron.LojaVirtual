@@ -165,14 +165,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="HtmlHelpers\InjectPageMetadataAttribute.cs" />
     <Compile Include="HtmlHelpers\StringHelpers.cs" />
+    <Compile Include="Models\CategoriaSubGruposViewModel.cs" />
+    <Compile Include="Models\ModalidadeSubGrupoViewModel.cs" />
     <Compile Include="Models\ProdutosViewModel.cs" />
+    <Compile Include="Models\SubGrupoCategoriasViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\sm-mint\sm-mint.css" />
+    <Content Include="Content\sm-simple\sm-simple.css" />
     <Content Include="css\animate.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -271,6 +277,10 @@
     <Content Include="Content\sm-mint\sm-mint.scss" />
     <Content Include="Content\sm-mint\_mixins.scss" />
     <Content Include="Content\sm-mint\_sm-mint.scss" />
+    <Content Include="Content\sm-simple\mixins\_sub-items-indentation.scss" />
+    <Content Include="Content\sm-simple\sm-simple.scss" />
+    <Content Include="Content\sm-simple\_mixins.scss" />
+    <Content Include="Content\sm-simple\_sm-simple.scss" />
     <None Include="Properties\PublishProfiles\QuironLojaVirtualWebV220161128054226.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -304,10 +314,16 @@
     <Content Include="Views\Shared\_Menu.cshtml" />
     <Content Include="Views\Shared\_Marcas.cshtml" />
     <Content Include="Views\Nav\Index.cshtml" />
+    <Content Include="Views\Nav\_Nav.cshtml" />
+    <Content Include="Views\Nav\Navegacao.cshtml" />
+    <Content Include="Views\Nav\_Vitrine.cshtml" />
+    <Content Include="Views\Nav\_NavTresColunas.cshtml" />
+    <Content Include="Views\Nav\_TenisCategoria.cshtml" />
+    <Content Include="Views\Nav\_CasualSubGrupo.cshtml" />
+    <Content Include="Views\Nav\_Suplementos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\sm-simple\" />
     <Folder Include="Views\Categoria\" />
     <Folder Include="Views\Menu\" />
     <Folder Include="Views\Produto\" />
@@ -318,7 +334,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.map" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Quiron.LojaVirtual.Dominio\Quiron.LojaVirtual.Dominio.csproj">

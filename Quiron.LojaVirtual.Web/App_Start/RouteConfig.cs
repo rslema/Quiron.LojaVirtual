@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace Quiron.LojaVirtual.Web
@@ -11,6 +7,9 @@ namespace Quiron.LojaVirtual.Web
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+
+            routes.MapMvcAttributeRoutes();
+
 
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
@@ -36,13 +35,9 @@ namespace Quiron.LojaVirtual.Web
                 "{categoria}/Pagina{pagina}", new { controller = "Vitrine", action = "ListaProdutos" }, new { pagina = @"\d+" });
 
 
-         //   routes.MapRoute("ObterImagem", "Vitrine/ObterImagem/{produtoId}", new { controller = "Vitrine", action = "ObterImagem", produtoId = UrlParameter.Optional });
-
-
-
             //routes.MapRoute(
             //    "ObterImagem",
-            //   "Vitrine/ObterImagem/{produtoId}",
+            //    "Vitrine/ObterImagem/{produtoId}",
             //    new {controller = "Vitrine", action = "ObterImagem", produtoId = UrlParameter.Optional});
 
             routes.MapRoute(null, "{controller}/{action}");
