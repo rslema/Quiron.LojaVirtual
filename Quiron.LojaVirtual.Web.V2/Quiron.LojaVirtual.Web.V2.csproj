@@ -315,12 +315,12 @@
     <Content Include="Views\Shared\_Marcas.cshtml" />
     <Content Include="Views\Nav\Index.cshtml" />
     <Content Include="Views\Nav\_Nav.cshtml" />
-    <Content Include="Views\Nav\Navegacao.cshtml" />
     <Content Include="Views\Nav\_Vitrine.cshtml" />
     <Content Include="Views\Nav\_NavTresColunas.cshtml" />
-    <Content Include="Views\Nav\_TenisCategoria.cshtml" />
     <Content Include="Views\Nav\_CasualSubGrupo.cshtml" />
     <Content Include="Views\Nav\_Suplementos.cshtml" />
+    <Content Include="Views\Nav\_TenisCategoria.cshtml" />
+    <Content Include="Views\Nav\Navegacao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

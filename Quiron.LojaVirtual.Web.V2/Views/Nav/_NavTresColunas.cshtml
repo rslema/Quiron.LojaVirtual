@@ -1,11 +1,9 @@
-﻿@using Quiron.LojaVirtual.Web.V2.Helpers
+﻿
+@using Quiron.LojaVirtual.Web.V2.Helpers
 @model Quiron.LojaVirtual.Web.V2.Models.ProdutosViewModel
 
 
-
-
 <div class="row">
-
     @for (var i = 0; i < Model.Produtos.Count(); i++)
     {
         var primeiro = i == 0;
@@ -21,7 +19,6 @@
 
 
         <div class="col-md-4 col-sm-6 col-xs-12">
-
             <div class="item">
                 <!-- Item image -->
                 <div class="item-image">
@@ -33,12 +30,9 @@
                 <div class="item-details">
                     <!-- Name -->
                     <h5>
-
                         <a href="@Url.Action("Detalhes","DetalhesProduto", new {id = @Model.Produtos[i].ProdutoModeloCor, marca = @Model.Produtos[i].MarcaDescricao.ToLower(), produto = @Model.Produtos[i].ProdutoDescricao.ToSeoUrl() })" class="zoom">
                             @Model.Produtos[i].ProdutoDescricao
                         </a>
-
-
 
                     </h5>
                     <div class="clearfix"></div>
@@ -54,11 +48,8 @@
                     <div class="pull-right"><a href="#" class="btn btn-danger btn-sm">Comprar</a></div>
                     <div class="clearfix"></div>
 
-
-
                 </div>
             </div>
-
         </div>
 
 
@@ -69,10 +60,7 @@
             @Html.Raw("</div>");
         }
     }
-
 </div>
-
-
 
 
 

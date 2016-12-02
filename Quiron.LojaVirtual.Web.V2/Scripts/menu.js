@@ -1,18 +1,23 @@
 ﻿var app = {};
 
 $(function () {
+
+    $('#main-menu').smartmenus();
+    /* Ecommerce sidebar */
+    $('.sidey .nav').navgoco();
     app.iniciarlizar();
-    });
+});
+
+
 
 app.iniciarlizar = function () {
-    $('#main-menu').smartmenus();
-    app.ObterEsportes();
+
+
     app.ObterMarcas();
+    app.ObterEsportes();
     app.ObterClubesNacionais();
     app.ObterInternacionais();
 }
-
-
 
 
 app.ObterClubesNacionais = function () {
@@ -33,12 +38,11 @@ app.ObterInternacionais = function () {
     });
 };
 
-
 app.ObterEsportes = function () {
 
     $.getJSON('/menu/obteresportes', function (data) {
         $(data).each(function () {
-            $("#esportes").append("<li><a href='#'>"+ this.CategoriaDescricao + "</a></li>");
+            $("#esportes").append("<li><a href='/nav/esportes/" + this.CategoriaCodigo + "/" + this.CategoriaDescricaoSeo + "'>" + this.CategoriaDescricao + "</a></li>");
         });
     });
 };
@@ -52,3 +56,4 @@ app.ObterMarcas = function () {
         });
     });
 };
+

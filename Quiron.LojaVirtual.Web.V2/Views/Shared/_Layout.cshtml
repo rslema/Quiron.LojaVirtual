@@ -8,19 +8,13 @@
     <meta name="description" content="@ViewBag.MetaDescription" />
     <meta name="keywords" content="@ViewBag.MetaKeywords" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Styles -->
     @Styles.Render("~/css")
     @Styles.Render("~/Content/startmenu")
-
     <!-- Favicon -->
 
 </head>
-
 <body>
-
-
-
 
 
 
@@ -33,7 +27,6 @@
                     <h4 class="modal-title">Shopping Cart</h4>
                 </div>
                 <div class="modal-body">
-
                     <!-- Items table -->
                     <table class="table table-striped">
                         <thead>
@@ -66,7 +59,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Continue Shopping</button>
@@ -76,44 +68,36 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
     <!-- Logo & Navigation starts -->
-
     <div class="header">
         <div class="container">
             <div class="row">
-                <div class="col-md-2 col-sm-2">
+                <div class="col-md-3 col-sm-3">
                     <!-- Logo -->
                     <div class="logo">
+
                         <h1> @Html.ActionLink("Real Sports", "Index") </h1>
                     </div>
                 </div>
-
-                <div class="col-md-10 col-sm-10">
+                <div class="col-md-9 col-sm-9">
                     <div class="kart-links">
                         <a href="Login.html">Seja bem-vindo(a)! Faça seu login </a>
-
                         <a href="login.html">Meu cadastro</a>
                         <a href="register.html">Meus pedidos</a>
                         <a data-toggle="modal" href="#shoppingcart"><i class="fa fa-shopping-cart"></i> 3 itens - R$ 300,00</a>
                     </div>
                 </div>
-
             </div>
-
             <div class="row">
-
                 <div class="col-md-12 col-sm-12">
                     @Html.Partial("_Menu")
                 </div>
 
-
             </div>
         </div>
-
 
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12">
-
                     @using (Html.BeginRouteForm("BuscaProduto", FormMethod.Get))
                     {
                         <div class="input-group">
@@ -126,24 +110,27 @@
                 </div>
             </div>
         </div>
-
     </div>
-
     <!-- Logo & Navigation ends -->
     <!-- Page title -->
     <div class="page-title">
         <div class="container">
-            <h2>
-                <i class="fa fa-shopping-cart color"></i> Pensou em esportes, pense Real Sports <small>Seu esporte está aqui.</small>
-            </h2>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="col-md-12 col-sm-12">
+                        <h2>
 
+                            <i class="fa fa-shopping-cart color"></i> Pensou em esportes, pense Real Sports <small>Seu esporte está aqui.</small>
 
-            <hr />
+                        </h2>
+                        <hr />
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Page title -->
     <!-- Page content -->
-
     <div class="page-content blocky">
         <div class="container">
             @RenderBody()
@@ -153,23 +140,15 @@
 
 
 
-
-
-
-
     <!-- Footer starts -->
     <footer>
         <div class="container">
-
             <div class="row">
-
                 <div class="col-md-4 col-sm-4">
                     <div class="fwidget">
-
                         <h4>Oslon de<span class="color">'</span> Techno</h4>
                         <hr />
                         <p>Duis leo risus, vehicula luctus nunc.  Quiue rhoncus, a sodales enim arcu quis turpis. Duis leo risus, condimentum ut posuere ac, vehicula luctus nunc.  Quisque rhoncus, a sodales enim arcu quis turpis.</p>
-
                         <div class="social">
                             <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                             <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
@@ -179,7 +158,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-4 col-sm-4">
                     <div class="fwidget">
                         <h4>Categories</h4>
@@ -194,11 +172,8 @@
                     </div>
                 </div>
 
-
-
                 <div class="col-md-4 col-sm-4">
                     <div class="fwidget">
-
                         <h4>Get In Touch</h4>
                         <hr />
                         <div class="address">
@@ -208,16 +183,11 @@
                             <p><i class="fa fa-phone color contact-icon"></i> +94-948-323-5532</p>
                             <p><i class="fa fa-envelope color contact-icon"></i> <a href="mailto:something@gmail.com">some.thing@gmail.com</a></p>
                         </div>
-
                     </div>
                 </div>
-
             </div>
 
-
-
             <hr />
-
             <div class="copy text-center">
                 Copyright 2013 &copy; - <a href="http://responsivewebinc.com/bootstrap-themes">Bootstrap Themes</a>
             </div>
@@ -228,14 +198,10 @@
     <span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span>
 
 
-
-
-
     <!-- Javascript files -->
     @Scripts.Render("~/js")
     @Scripts.Render("~/Scripts/startmenu")
     @Scripts.Render("~/Scripts/jsprojetos")
-
 
 </body>
 </html>

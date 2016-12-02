@@ -54,9 +54,9 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
                 query = query.Where(p => p.ModalidadeCodigo == modalidade);
 
             if (!string.IsNullOrEmpty(busca))
-            //    //query = query.Where(p => p.ProdutoDescricao.StartsWith(busca)); //%proteina
-            //    //query = query.Where(p => p.ProdutoDescricao.EndsWith(busca)); //proteina%
-          query = query.Where(p => p.ProdutoDescricao.Contains(busca)); //%proteina%
+                //query = query.Where(p => p.ProdutoDescricao.StartsWith(busca)); //%proteina
+                //query = query.Where(p => p.ProdutoDescricao.EndsWith(busca)); //proteina%
+                query = query.Where(p => p.ProdutoDescricao.Contains(busca)); //%proteina%
 
 
             query = query.OrderBy(p => Guid.NewGuid());

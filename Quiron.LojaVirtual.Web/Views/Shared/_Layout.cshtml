@@ -17,23 +17,22 @@
 
         <a class="navbar-brand" href="#"> REAL SPORTS - Seu esporte é aqui</a>
         @Html.Action("Resumo", "Carrinho")
-        /div>
-
-        <div class="row panel">
-            <div id="categorias" class="col-xs-3">
-                @Html.Action("Menu", "Categoria")
-            </div>
-
-
-            <div id="produtos" class="col-xs-8">
-                @RenderBody()
-            </div>
+    </div>
+    <div class="row panel">
+        <div id="categorias" class="col-xs-3">
+            @Html.Action("Menu", "Categoria")
         </div>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/jqueryval")
 
-        @RenderSection("scripts", required: false)
+        <div id="produtos" class="col-xs-8">
+            @RenderBody()
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+    @RenderSection("scripts", required: false)
 
 
 </body>
